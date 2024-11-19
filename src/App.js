@@ -1,13 +1,21 @@
 import "./App.css";
 
-
 import About from "./Components/About";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Components/Home";
 import { Menu } from "antd";
 import { Flex, Layout } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
-
+import UpdatedTimeTable from "./Components/UpdatedTimeTable";
+import Language from "./Components/Language";
+import ChangeCity from "./Components/ChangeCity";
+import ClearRecentSearch from "./Components/ClearRecentSearch";
+import RateUs from "./Components/RateUs";
+import ReportIssue from "./Components/ReportIssue";
+import Setting from "./Components/Setting";
+import ShareApp from "./Components/ShareApp";
+import SuggestAFeature from "./Components/SuggestAFeature";
+import ViewAllAlert from "./Components/ViewAllAlert";
 
 const { Header, Footer, Sider, Content } = Layout;
 const headerStyle = {
@@ -45,19 +53,47 @@ const layoutStyle = {
 function App() {
   return (
     <div>
-     
       <Layout style={layoutStyle}>
         <Header style={headerStyle}>Header</Header>
         <Layout>
           <Sider width="25%" style={siderStyle}>
             <Menu>
               <Menu.Item key="1">
-              < Link to="/Home"> <HomeOutlined spin = "true" />  Home</Link>
+                <Link to="/Home">
+                  {" "}
+                  <HomeOutlined spin="true" /> Home
+                </Link>
               </Menu.Item>
               <Menu.Item key="2">
                 <Link to="/About">About</Link>
               </Menu.Item>
-              
+              <Menu.Item key="3">
+                <Link to="/UpdatedTimeTable">UpdatedTimeTable</Link>
+              </Menu.Item>
+              <Menu.Item key="4">
+                <Link to="/ChangeCity">ChangeCity</Link>
+              </Menu.Item>
+              <Menu.Item key="5">
+                <Link to="/ClearRecentSearch">ClearRecentSearch</Link>
+              </Menu.Item>
+              <Menu.Item key="6">
+                <Link to="/RateUs">RateUs</Link>
+              </Menu.Item>
+              <Menu.Item key="7">
+                <Link to="/ReportIssue">ReportIssue</Link>
+              </Menu.Item>
+              <Menu.Item key="8">
+                <Link to="/Setting">Setting</Link>
+              </Menu.Item>
+              <Menu.Item key="9">
+                <Link to="/ShareApp">ShareApp</Link>
+              </Menu.Item>
+              <Menu.Item key="10">
+                <Link to="/SuggestAFeature">SuggestAFeature</Link>
+              </Menu.Item>
+              <Menu.Item key="10">
+                <Link to="/Language">Language</Link>
+              </Menu.Item>
             </Menu>
           </Sider>
           <Content style={contentStyle}>
@@ -65,8 +101,17 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/Home" element={<Home />} />
               <Route path="/About" element={<About />} />
-             
-             
+              <Route path="/UpdatedTimeTable" element={<UpdatedTimeTable />} />
+              <Route path="/ChangeCity" element={<ChangeCity />} />
+              <Route path="/ClearRecentSearch" element={<ClearRecentSearch />} />
+              <Route path="/RateUs" element={<RateUs />} />
+              <Route path="/ReportIssue" element={<ReportIssue />} />
+              <Route path="/Setting" element={<Setting />} />
+              <Route path="/ReportIssue" element={<ReportIssue />} />
+              <Route path="/ShareApp" element={<ShareApp />} />
+              <Route path="/SuggestAFeature" element={<SuggestAFeature />} />
+              <Route path="/ViewAllAlert" element={<ViewAllAlert />} />
+              <Route path="/Language" element={<Language />} />
             </Routes>
           </Content>
         </Layout>
