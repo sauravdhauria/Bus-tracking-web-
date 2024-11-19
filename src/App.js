@@ -1,13 +1,10 @@
 import "./App.css";
-
-
 import About from "./Components/About";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Components/Home";
 import { Menu } from "antd";
 import { Flex, Layout } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
-
 
 const { Header, Footer, Sider, Content } = Layout;
 const headerStyle = {
@@ -23,7 +20,7 @@ const contentStyle = {
   minHeight: 120,
   lineHeight: "120px",
   color: "#fff",
-  backgroundColor: "#ffff",
+  backgroundColor: "#4096ff",
 };
 const siderStyle = {
   textAlign: "center",
@@ -45,30 +42,16 @@ const layoutStyle = {
 function App() {
   return (
     <div>
-     
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/About" element={<About />} />
+      </Routes>
+
       <Layout style={layoutStyle}>
         <Header style={headerStyle}>Header</Header>
         <Layout>
-          <Sider width="25%" style={siderStyle}>
-            <Menu>
-              <Menu.Item key="1">
-              < Link to="/Home"> <HomeOutlined spin = "true" />  Home</Link>
-              </Menu.Item>
-              <Menu.Item key="2">
-                <Link to="/About">About</Link>
-              </Menu.Item>
-              
-            </Menu>
-          </Sider>
-          <Content style={contentStyle}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/Home" element={<Home />} />
-              <Route path="/About" element={<About />} />
-             
-             
-            </Routes>
-          </Content>
+          <Home/>
         </Layout>
         <Footer style={footerStyle}>Footer</Footer>
       </Layout>
