@@ -5,6 +5,7 @@ import Home from "./Components/Home";
 import { Menu } from "antd";
 import { Flex, Layout } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
+import TaskOne from "./Components/TaskOne";
 
 const { Header, Footer, Sider, Content } = Layout;
 const headerStyle = {
@@ -46,6 +47,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
+        <Route path="/TaskOne" element={<TaskOne />} />
       </Routes>
 
       <Layout style={layoutStyle}>
