@@ -5,7 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Components/Home";
 import { Menu } from "antd";
 import { Flex, Layout } from "antd";
-import { HomeOutlined } from "@ant-design/icons";
+import { HomeOutlined,SettingOutlined  } from "@ant-design/icons";
 import UpdatedTimeTable from "./Components/UpdatedTimeTable";
 import Language from "./Components/Language";
 import ChangeCity from "./Components/ChangeCity";
@@ -16,6 +16,8 @@ import Setting from "./Components/Setting";
 import ShareApp from "./Components/ShareApp";
 import SuggestAFeature from "./Components/SuggestAFeature";
 import ViewAllAlert from "./Components/ViewAllAlert";
+import TaskOne from "./Components/TaskOne";
+import TaskTwo from "./Components/TaskTwo";
 
 const { Header, Footer, Sider, Content } = Layout;
 const headerStyle = {
@@ -59,9 +61,7 @@ function App() {
           <Sider width="25%" style={siderStyle}>
             <Menu>
               <Menu.Item key="1">
-                <Link to="/Home">
-                  {" "}
-                  <HomeOutlined spin="true" /> Home
+                <Link to="/Home"><HomeOutlined spin="true" /> Home
                 </Link>
               </Menu.Item>
               <Menu.Item key="2">
@@ -83,7 +83,7 @@ function App() {
                 <Link to="/ReportIssue">ReportIssue</Link>
               </Menu.Item>
               <Menu.Item key="8">
-                <Link to="/Setting">Setting</Link>
+                <Link to="/Setting"><SettingOutlined /> Setting</Link>
               </Menu.Item>
               <Menu.Item key="9">
                 <Link to="/ShareApp">ShareApp</Link>
@@ -93,6 +93,12 @@ function App() {
               </Menu.Item>
               <Menu.Item key="10">
                 <Link to="/Language">Language</Link>
+              </Menu.Item>
+              <Menu.Item key="11">
+                <Link to="/TaskOne">TaskOne</Link>
+              </Menu.Item>
+              <Menu.Item key="12">
+                <Link to="/TaskTwo">TaskTwo</Link>
               </Menu.Item>
             </Menu>
           </Sider>
@@ -112,6 +118,8 @@ function App() {
               <Route path="/SuggestAFeature" element={<SuggestAFeature />} />
               <Route path="/ViewAllAlert" element={<ViewAllAlert />} />
               <Route path="/Language" element={<Language />} />
+              <Route path="/TaskOne" element={<TaskOne />} />
+              <Route path="/TaskTwo" element={<TaskTwo />} />
             </Routes>
           </Content>
         </Layout>
